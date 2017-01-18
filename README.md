@@ -1,2 +1,2 @@
 # hello-world
-Hello world repository
+This repository is written from Sector 126
