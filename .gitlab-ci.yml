@@ -1,0 +1,28 @@
+before_script:
+  - echo "this is run before any jobs" 
+stages:
+  - build
+  - test
+  - deploy
+ 
+job1:
+  stage: build
+  script:
+    - mvn clean install 
+    - echo "this job runs on all branches"
+
+
+job2:
+  stage: test
+  script:
+    - mvn test
+
+
+job3:
+  stage: deploy
+  script:
+    - mvn test
+    - echo "deployment command goes here, this job runs only on QA"
+  only:
+    - QA
+      
